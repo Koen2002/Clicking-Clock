@@ -1,0 +1,90 @@
+body {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(117,195,91,1) 50%, rgba(0,212,255,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    /* border: 1px solid red; */
+}
+
+.klok {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 200px;
+    border: 2px solid rgb(190, 113, 12);
+    position: relative;
+}
+
+.klok .number {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+}
+
+.klok .number1 { --rotation: 30deg;}
+.klok .number2 { --rotation: 60deg;}
+.klok .number3 { --rotation: 90deg;}
+.klok .number4 { --rotation: 120deg;}
+.klok .number5 { --rotation: 150deg;}
+.klok .number6 { --rotation: 180deg;}
+.klok .number7 { --rotation: 210deg;}
+.klok .number8 { --rotation: 240deg;}
+.klok .number9 { --rotation: 270deg;}
+.klok .number10 { --rotation: 300deg;}
+.klok .number11 { --rotation: 330deg;}
+
+.klok .wijzer {
+   --rotation: 0;
+   position: absolute; 
+   bottom: 50%;
+   left: 50%;
+   background-color: black;
+   transform-origin: bottom;
+   z-index: 10S;
+   transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.klok::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(201, 97, 13);
+    z-index: 11;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.klok .wijzer.seconde {
+    width: 3px;
+    height: 40%;
+    background-color: rgb(230, 153, 10);
+}
+
+.klok .wijzer.lange {
+    width: 7px;
+    height: 35%;
+    background-color: black;
+}
+
+.klok .wijzer.korte {
+    width: 10px;
+    height: 30%;
+    background-color: black;
+}
+
